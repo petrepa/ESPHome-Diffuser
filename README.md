@@ -4,7 +4,7 @@ A ESPHomified aroma diffuser to work as an controllable humidifier through Home 
 
 # Problem
 
-My partner, [Amanda Lohne](https://amandalohne.com/), is making an [IKEA Greenhouse](https://www.reddit.com/r/IkeaGreenhouseClub/) with an IKEA FABRIKÖR cabinet. This cabinet will be sealed off to maintain high levels of moisture. To create the moisture, she's bought an aroma diffuser which will be filled with water. We could build a mist maker ourselves (check out the #theory section), but we saved ourselves some work and also got a ready made case and water container with a store bought diffuser.
+My partner, [Amanda Lohne](https://amandalohne.com/), is making an [IKEA Greenhouse](https://www.reddit.com/r/IkeaGreenhouseClub/) with an IKEA FABRIKÖR cabinet. This cabinet will be sealed off to maintain high levels of moisture. To create the moisture, she's bought an aroma diffuser which will be filled with water. We could build a mist maker ourselves (check out the [theory section](https://github.com/petrepa/ESPHome-Diffuser/blob/main/README.md#theory)), but we saved ourselves some work and also got a ready made case and water container with a store bought diffuser.
 
 The problem is that this diffuser only has two modes:
 - One button press: always on
@@ -32,6 +32,19 @@ I therefore frankensteined it and added a Wemos D1 Mini to hijack the circuit bo
 | 5V        | Capacitor connection                   | Found this connection point by trial and error. Had the USB voltage and everything seemed to work as it should |
 | GND       | Random GND point                       |    | 
 
+# Home Assistant Integration
+Using [ESPHome](https://esphome.io/) to configure the module, we can easily integrate and automate the diffuser in [Home Assistant](https://www.home-assistant.io/). The ESPHome yaml can be found [here in the files](https://github.com/petrepa/ESPHome-Diffuser/blob/main/greenhouse-humidifier.yaml).
+
+This gives us a switch for the misting function. By combining this with a separate humidity sensor (or adding one directly to the diffusor), in our case a [Xiaomi BT Home](https://bthome.io/) enabled multi sensor, we can creating a humidifier entity in Home Assistant with the [generic hygrostat integration](https://www.home-assistant.io/integrations/generic_hygrostat/). 
+
+```yaml
+# Add to configuration.yaml and reboot your HA server
+generic_hygrostat:
+  - name: Living Room Greenhouse
+    humidifier: switch.greenhouse_humidifier
+    target_sensor: sensor.living_room_multi_sensor_humidity
+
+```
 
 # Theory
 |   |   |
