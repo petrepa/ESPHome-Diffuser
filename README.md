@@ -36,5 +36,4 @@ I therefore frankensteined it and added a Wemos D1 Mini to hijack the circuit bo
 # Theory
 |   |   |
 |---|---|
-|[![Make your own Super Simple Ultrasonic Mist Maker
-](https://img.youtube.com/vi/OOZi3QnnDCo/0.jpg)](https://www.youtube.com/watch?v=OOZi3QnnDCo&ab_channel=GreatScott%21) | [![Ultrasonic Mist Maker || DIY or Buy](https://img.youtube.com/vi/aKhPj7uFD0Y/0.jpg)](https://www.youtube.com/watch?v=aKhPj7uFD0Y&ab_channel=GreatScott%21) |
+|[![Make your own Super Simple Ultrasonic Mist Maker](https://img.youtube.com/vi/OOZi3QnnDCo/0.jpg)](https://www.youtube.com/watch?v=OOZi3QnnDCo&ab_channel=GreatScott%21) | [![Ultrasonic Mist Maker || DIY or Buy](https://img.youtube.com/vi/aKhPj7uFD0Y/0.jpg)](https://www.youtube.com/watch?v=aKhPj7uFD0Y&ab_channel=GreatScott%21) |
