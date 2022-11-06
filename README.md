@@ -34,6 +34,28 @@ I therefore frankensteined it and added a Wemos D1 Mini to hijack the circuit bo
 | 5V        | Capacitor connection                   | Found this connection point by trial and error. Had the USB voltage and everything seemed to work as it should |
 | GND       | Random GND point                       |    | 
 
+<details>
+  <summary><h2>Build process</h2></summary>
+  Pop the lid by unscrewing some screws.
+  
+  ![PXL_20221102_200026964](https://user-images.githubusercontent.com/30476405/200193846-74f9d098-9158-4b7a-8cf0-1b1d80fd4d62.jpg)
+  
+  Finding the connections.
+  
+  <img width="945" alt="image" src="https://user-images.githubusercontent.com/30476405/200193945-d8479ec4-4186-4e06-bf50-d545f9458afb.png">
+  
+  <img width="948" alt="image" src="https://user-images.githubusercontent.com/30476405/200194011-20719d0f-058f-49a3-9583-f40283aecfc8.png">
+
+  Put it all together
+
+  <img width="auto" alt="image" src="https://user-images.githubusercontent.com/30476405/200194074-10a59369-907c-4f83-a07a-ccdd6a25d0aa.jpg">
+  
+  Last bit of circuit isolation 🤪🤪
+  <img width="auto" alt="image" src="https://user-images.githubusercontent.com/30476405/200194085-1538ef1a-d53d-45a8-8fbb-b4a727dd2e37.jpg">
+
+
+</details>
+
 # Home Assistant Integration
 Using [ESPHome](https://esphome.io/) to configure the module, we can easily integrate and automate the diffuser in [Home Assistant](https://www.home-assistant.io/). The ESPHome yaml can be found [here in the files](https://github.com/petrepa/ESPHome-Diffuser/blob/main/greenhouse-humidifier.yaml).
 
