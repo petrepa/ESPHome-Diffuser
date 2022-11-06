@@ -1,0 +1,75 @@
+substitutions:
+  friendly_name: Greenhouse Humidifier
+
+esphome:
+  name: "greenhouse-humidifier"
+
+esp8266:
+  board: d1_mini
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Web-XXXXXX"
+    password: "[CAPTIVE PORTAL PASSWORD]"
+
+captive_portal:
+    
+# Example configuration entry
+output:
+  - platform: gpio
+    pin: D5
+    inverted: true
+    id: output1
+  - platform: gpio
+    pin: D6
+    inverted: true
+    id: output2
+
+button:
+  - platform: output
+    name: "${friendly_name}"
+    id: humidifer_btn_mist
+    internal: true
+    output: output1
+    duration: 100ms
+  - platform: output
+    name: "${friendly_name} Light Mode"
+    id: humidifer_btn_light
+    icon: "mdi:lightbulb"
+    output: output2
+    duration: 100ms
+    
+switch:
+  - platform: template
+    name: "${friendly_name}"
+    lambda: |-
+      if (id(voltage).state > 0.1) {
+        return true;
+      } else {
+        return false;
+      }
+    turn_on_action:
+      - button.press: humidifer_btn_mist
+    turn_off_action:
+      - button.press: humidifer_btn_mist
+
+    
+sensor:
+  - platform: adc
+    pin: A0
+    id: voltage
+    update_interval: 1s
+    
