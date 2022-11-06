@@ -2,9 +2,11 @@
 
 A ESPHomified aroma diffuser to work as an controllable humidifier through Home Assistant
 
+https://user-images.githubusercontent.com/30476405/200193576-415818a4-d338-4237-9c56-8fed2da2a92a.mp4
+
 # Problem
 
-My partner, [Amanda Lohne](https://amandalohne.com/), is making an [IKEA Greenhouse](https://www.reddit.com/r/IkeaGreenhouseClub/) with an IKEA FABRIKÖR cabinet. This cabinet will be sealed off to maintain high levels of moisture. To create the moisture, she's bought an aroma diffuser which will be filled with water. We could build a mist maker ourselves (check out the [theory section](https://github.com/petrepa/ESPHome-Diffuser/blob/main/README.md#theory)), but we saved ourselves some work and also got a ready made case and water container with a store bought diffuser.
+My partner, [Amanda Lohne](https://amandalohne.com/), is making an [IKEA Greenhouse](https://www.reddit.com/r/IkeaGreenhouseClub/) with an IKEA FABRIKÖR cabinet. This cabinet will be sealed off to maintain high levels of moisture. To create the moisture, she's bought an aroma diffuser which will be filled with water. We could build a mist maker ourselves (check out the [theory section](https://github.com/petrepa/ESPHome-Diffuser/blob/main/README.md#theory)), but we saved ourselves some work and also got a ready made case and water container with a [store bought diffuser](https://www.ebay.com/itm/134066518332).
 
 The problem is that this diffuser only has two modes:
 - One button press: always on
@@ -45,6 +47,8 @@ generic_hygrostat:
     target_sensor: sensor.living_room_multi_sensor_humidity
 
 ```
+<img width="893" alt="image" src="https://user-images.githubusercontent.com/30476405/200193677-2b8985ea-b138-4d08-bc2b-521003368d3a.png">
+
 
 # Theory
 |   |   |
